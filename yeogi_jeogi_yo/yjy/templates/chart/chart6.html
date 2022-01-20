@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">지역별 주문량 순위</h4>
+                <div class="col-lg-12">
+                    <div class="chart col-lg-12">
+                        <img id="sec1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">지역 및 배달 품목 별 통계</h4>
+                <div class="form-group row-cols-1">
+                    <label class="form-lb">Address 1</label>
+                    <select class="js-example-basic-single w-25" id="addr1">
+                        {% for i in addr1 %}
+                            <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="form-lb">Address 2</label>
+                    <select class="js-example-basic-single w-25" id="addr2">
+                        <option value="">전체</option>
+                        {% for i in addr2 %}
+                            <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-lg-12">
+                    <div class="chart col-lg-12">
+                        <img id="sec2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/chart6.js')}}"></script>
+{% endblock %}

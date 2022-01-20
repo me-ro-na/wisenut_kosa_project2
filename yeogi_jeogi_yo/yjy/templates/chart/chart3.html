@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+    <input type="hidden" name="cats" value="{{cats}}">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">시간 / 요일 / 품목 별 배달음식 주문 횟수</h4>
+                <div class="col-lg-12">
+                    <div class="form-group row">
+                        {% for i in range(0, len) %}
+                            <div class="col-1">
+                                <p class="mb-2">{{cats[i]}}</p>
+                                <label class="toggle-switch toggle-switch-{{checks[i]}}">
+                                <input id="chk-{{i}}" type="checkbox" name="cats" value="{{cats[i]}}" checked>
+                                <span class="toggle-slider round"></span>
+                            </label>                      
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="chart col-lg-12">
+                        <h1 id="sec1-err" style="text-align: center;">표시할 데이터가 없습니다.</h1>
+                        <img id="sec1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/chart3.js')}}"></script>
+{% endblock %}

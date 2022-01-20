@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">직장인 음식 품목별 평균 점심식대 소비 금액</h4>
+                <div class="col-lg-12">
+                    <div class="form-group row">
+                        {% for i in range(0, cats.size) %}
+                            <div class="form-check form-check-{{checks[i]}}">
+                                <label class="form-check-label">
+                                <input type="checkbox" id="wants" name="wants" class="form-check-input" value="{{cats[i]}}" checked>
+                                {{cats[i]}}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="chart col-lg-12">
+                        <h1 id="sec1-err" style="text-align: center;">표시할 데이터가 없습니다.</h1>
+                        <img id="sec1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/chart1.js')}}"></script>
+{% endblock %}

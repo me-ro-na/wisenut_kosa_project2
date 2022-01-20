@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">직장인 점심식대 소비 금액 평균</h4>
+        <a href="/chart1">
+          <div class="chart row-cols-1">
+            <img id="sec1" src="{{url_for('static', filename='images/chart/chart1.png')}}">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">배달음식 선호 성향도에 따른 외식 소비 패턴</h4>
+        <a href="/chart2">
+          <div class="chart row-cols-1">
+            <img id="sec2" src="{{url_for('static', filename='images/chart/chart2.png')}}" style="width: 100%">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">1등 메뉴({{chart3_cat}})의 요일별 판매량</h4>
+        <a href="/chart3">
+          <div class="chart row-cols-1">
+            <img id="sec3" src="{{url_for('static', filename='images/chart/chart3.png')}}">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">주문지역 인구특성</h4>
+        <a href="/chart4">
+          <div class="chart row-cols-1">
+            <img id="sec4" src="{{url_for('static', filename='images/chart/chart4.png')}}">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">주문지역 주거특성</h4>
+        <a href="/chart5">
+          <div class="chart row-cols-1">
+            <img id="sec5" src="{{url_for('static', filename='images/chart/chart5.png')}}">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">우천시 품목별 배달주문량 비교</h4>
+        <a href="/chart6">
+          <div class="chart row-cols-1">
+            <img id="sec6" src="{{url_for('static', filename='images/chart/chart6.png')}}">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

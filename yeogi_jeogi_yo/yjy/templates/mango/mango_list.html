@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Delivery Top 20</h4>
+      <div class="table-responsive pt-3">
+        <div style="padding-bottom: 5%;">
+          <a href="static/csv/{{fileName}}" class="btn btn-inverse-warning btn-fw">
+            <i class="mdi mdi-file-check btn-icon-download"></i>
+            Export CSV
+          </a>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Restaurant</th>
+              <th>Point</th>
+              <th>Address</th>
+              <th>Sectors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in data %}
+              <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>
+                  <div class="d-flex">
+                    <div>
+                      <div class="text-dark font-weight-bold mb-2 mr-2">{{ i[2] }}</div>
+                    </div>
+                    <div class="mr-2">
+                      <i class="fa fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
